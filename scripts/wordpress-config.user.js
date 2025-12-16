@@ -63,8 +63,8 @@
 
         changeBtn.onclick = function (e) {
             e.preventDefault();
-            postPerPage.value = "210";
-            postPerRSS.value = "30";
+            postPerPage.value = "30";
+            postPerRSS.value = "210";
             excerpt.checked = true;
         }
     }
