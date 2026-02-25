@@ -1,0 +1,13 @@
+// ==UserScript==
+// @name         Copy Real Link (Facebook)
+// @version      2.0
+// @namespace    https://github.com/HungNth/userscripts
+// @license      MIT
+// @description  Extract and copy clean URLs from Facebook redirect links, stripping tracking parameters like fbclid.
+// @author       HungNth
+// @match        *://*.facebook.com/*
+// @icon         https://www.google.com/s2/favicons?domain=facebook.com
+// @grant        GM_setClipboard
+// ==/UserScript==
+
+!function(){"use strict";const t=["fbclid","fb_action_ids","fb_action_types","fb_source","fb_ref","fbid","action_object_map","action_type_map","action_ref_map","utm_source","utm_medium","utm_campaign","utm_term","utm_content","utm_id","utm_source_platform","utm_creative_format","utm_marketing_tactic","gclid","gclsrc","gbraid","wbraid","msclkid","ref","referral","_hsenc","_hsmi","mc_cid","mc_eid","igshid","yclid","zanpid","dclid","srsltid"];document.addEventListener("contextmenu",(function(e){let o=e.target;for(;o&&"A"!==o.tagName;)o=o.parentElement;if(!o||"A"!==o.tagName||!o.href)return;let n=o.href,i=null;const r=n.match(/[?&]u=([^&]+)/);if(i=r?decodeURIComponent(r[1]):n,i=(e=>{try{const o=new URL(e);return t.forEach((t=>o.searchParams.delete(t))),o.toString()}catch{return e}})(i),i&&i!==n){const t=(t=>{const e=document.createElement("button");return e.style.position="absolute",e.style.zIndex="1000",e.style.backgroundColor="#007bff",e.style.color="#fff",e.style.border="none",e.style.padding="5px 10px",e.style.borderRadius="4px",e.style.cursor="pointer",e.innerHTML='<svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.975 14.51a1.05 1.05 0 0 0 0-1.485 2.95 2.95 0 0 1 0-4.172l3.536-3.535a2.95 2.95 0 1 1 4.172 4.172l-1.093 1.092a1.05 1.05 0 0 0 1.485 1.485l1.093-1.092a5.05 5.05 0 0 0-7.142-7.142L9.49 7.368a5.05 5.05 0 0 0 0 7.142c.41.41 1.075.41 1.485 0zm2.05-5.02a1.05 1.05 0 0 0 0 1.485 2.95 2.95 0 0 1 0 4.172l-3.5 3.5a2.95 2.95 0 1 1-4.171-4.172l1.025-1.025a1.05 1.05 0 0 0-1.485-1.485L3.87 12.99a5.05 5.05 0 0 0 7.142 7.142l3.5-3.5a5.05 5.05 0 0 0 0-7.142 1.05 1.05 0 0 0-1.485 0z" fill="#fff"/></svg> Copy Real Link',e.onclick=()=>{GM_setClipboard(t),e.textContent="Copied!",setTimeout((()=>e.remove()),2e3)},e})(i);document.body.appendChild(t);const e=o.getBoundingClientRect();t.style.top=`${e.top+window.scrollY}px`,t.style.left=`${e.right+window.scrollX+5}px`,setTimeout((()=>t.remove()),2e3)}}))}();
