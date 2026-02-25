@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         Copy Real Link (Facebook)
-// @version      1.0
-// @namespace    https://greasyfork.org/en/scripts/482987-copy-real-link
-// @license      CC BY
+// @version      2.0
+// @namespace    https://github.com/HungNth/userscripts
+// @license      MIT
 // @description  Extract and copy clean URLs from Facebook redirect links, stripping tracking parameters like fbclid.
-// @author       almahmud & gpt
+// @author       HungNth
 // @match        *://*.facebook.com/*
 // @grant        GM_setClipboard
 // ==/UserScript==
