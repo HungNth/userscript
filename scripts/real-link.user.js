@@ -6,6 +6,7 @@
 // @description  Extract and copy clean URLs from Facebook redirect links, stripping tracking parameters like fbclid.
 // @author       HungNth
 // @match        *://*.facebook.com/*
+// @icon         https://www.google.com/s2/favicons?domain=facebook.com
 // @grant        GM_setClipboard
 // ==/UserScript==
 
