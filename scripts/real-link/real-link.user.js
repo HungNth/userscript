@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Copy Real Link (Facebook)
-// @version      2.0
+// @version      2.0.1
 // @namespace    https://github.com/HungNth/userscripts
 // @license      MIT
 // @description  Extract and copy clean URLs from Facebook redirect links, stripping tracking parameters like fbclid.
@@ -83,6 +83,9 @@
         button.style.padding = '5px 10px';
         button.style.borderRadius = '4px';
         button.style.cursor = 'pointer';
+        button.style.display = 'flex';
+        button.style.alignItems = 'center';
+        button.style.gap = '5px';
 
         // SVG icon
         const svgIcon = `<svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.975 14.51a1.05 1.05 0 0 0 0-1.485 2.95 2.95 0 0 1 0-4.172l3.536-3.535a2.95 2.95 0 1 1 4.172 4.172l-1.093 1.092a1.05 1.05 0 0 0 1.485 1.485l1.093-1.092a5.05 5.05 0 0 0-7.142-7.142L9.49 7.368a5.05 5.05 0 0 0 0 7.142c.41.41 1.075.41 1.485 0zm2.05-5.02a1.05 1.05 0 0 0 0 1.485 2.95 2.95 0 0 1 0 4.172l-3.5 3.5a2.95 2.95 0 1 1-4.171-4.172l1.025-1.025a1.05 1.05 0 0 0-1.485-1.485L3.87 12.99a5.05 5.05 0 0 0 7.142 7.142l3.5-3.5a5.05 5.05 0 0 0 0-7.142 1.05 1.05 0 0 0-1.485 0z" fill="#fff"/></svg>`;
@@ -132,7 +135,7 @@
             button.style.top = `${rect.top + window.scrollY}px`;
             button.style.left = `${rect.right + window.scrollX + 5}px`;
 
-            setTimeout(() => button.remove(), 2000);
+            setTimeout(() => button.remove(), 5000);
         }
     });
 })();
