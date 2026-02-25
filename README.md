@@ -4,8 +4,8 @@
 
 To use these user scripts, you can install one of the following browser extensions:
 
--   [Tampermonkey](https://www.tampermonkey.net/)
--   [Violentmonkey](https://violentmonkey.github.io/)
+- [Tampermonkey](https://www.tampermonkey.net/)
+- [Violentmonkey](https://violentmonkey.github.io/)
 
 These extensions allow you to manage and run user scripts in your browser.
 
@@ -13,7 +13,10 @@ These extensions allow you to manage and run user scripts in your browser.
 
 Below is a list of available user scripts in this repository. Click the "Install" button to add them to your browser:
 
-1.   [![Install Flaticon SVG Downloader](https://img.shields.io/badge/install-Flaticon_SVG_Downloader-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/flaticon-svg-downloader.user.js)
+1.  [![Install Flaticon SVG Downloader](https://img.shields.io/badge/install-Flaticon_SVG_Downloader-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/flaticon-svg-downloader/flaticon-svg-downloader-min.user.js)
 
-2.   [![Install Envato Skip Frame](https://img.shields.io/badge/install-Envato_Skip_Frame-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/envato-skip-frame.user.js)
-3.   [![Install WordPress Auto Config](https://img.shields.io/badge/install-WordPress_Auto_Config-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/wordpress-config.user.js)
+2.  [![Install Envato Skip Frame](https://img.shields.io/badge/install-Envato_Skip_Frame-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/envato-skip-frame/envato-skip-frame-min.user.js)
+
+3.  [![Install WordPress Auto Config](https://img.shields.io/badge/install-WordPress_Auto_Config-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/wordpress-configure/wordpress-config-min.user.js)
+
+4.  [![Copy Facebook Real Link](https://img.shields.io/badge/install-Copy_Facebook_Real_Link-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/real-link/real-link-min.user.js)
