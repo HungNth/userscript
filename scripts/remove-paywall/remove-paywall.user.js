@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Remove Paywall Opener
 // @namespace    https://github.com/HungNth/userscripts
-// @version      1.1.1
-// @description  Add a Tampermonkey menu command to open the current HTTPS page through removepaywall.com.
+// @version      1.2.0
+// @description  Add Tampermonkey menu commands to open the current HTTPS page through paywall removal services.
 // @author       HungNth
 // @match        *://*/*
 // @noframes
@@ -20,8 +20,20 @@
         return;
     }
 
-    const REMOVE_PAYWALL_BASE_URL = 'https://www.removepaywall.com/';
-    const MENU_COMMAND_NAME = 'Open with Remove Paywall';
+    const PAYWALL_OPENERS = [
+        {
+            menuName: 'Open with Archive.is',
+            baseUrl: 'https://archive.is/',
+        },
+        {
+            menuName: 'Open with Freedium Mirror',
+            baseUrl: 'https://freedium-mirror.cfd/',
+        },
+        {
+            menuName: 'Open with Remove Paywall',
+            baseUrl: 'https://www.removepaywall.com/',
+        },
+    ];
 
     const showError = (message) => {
         alert(`[Remove Paywall] ${message}`);
@@ -59,7 +71,7 @@
         };
     };
 
-    const openCurrentPageWithRemovePaywall = () => {
+    const openCurrentPageWithPaywallOpener = (baseUrl) => {
         const currentUrl = getValidHttpsUrl(window.location.href);
 
         if (!currentUrl.isValid) {
@@ -67,11 +79,13 @@
             return;
         }
 
-        GM_openInTab(`${REMOVE_PAYWALL_BASE_URL}${currentUrl.url}`, {
+        GM_openInTab(`${baseUrl}${currentUrl.url}`, {
             active: true,
             insert: true,
         });
     };
 
-    GM_registerMenuCommand(MENU_COMMAND_NAME, openCurrentPageWithRemovePaywall);
+    PAYWALL_OPENERS.forEach(({ menuName, baseUrl }) => {
+        GM_registerMenuCommand(menuName, () => openCurrentPageWithPaywallOpener(baseUrl));
+    });
 })();
