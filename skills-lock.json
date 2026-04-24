@@ -1,6 +1,21 @@
 {
   "version": 1,
   "skills": {
+    "develop-userscripts": {
+      "source": "xixu-me/skills",
+      "sourceType": "github",
+      "computedHash": "6e5ec8cc0c02dac774eb4255615c272505237ac05220997d7ce673756ed1f0a6"
+    },
+    "javascript-pro": {
+      "source": "jeffallan/claude-skills",
+      "sourceType": "github",
+      "computedHash": "be8d710a5339d1435df48d059cff2a98ab4f13abd65be40ea3e4e03c336fab16"
+    },
+    "modern-javascript-patterns": {
+      "source": "wshobson/agents",
+      "sourceType": "github",
+      "computedHash": "35ec9acf08dabb77ca240330d10dd1a562ca869fe75e67ae12c4e472eb7fe498"
+    },
     "tampermonkey": {
       "source": "henkisdabro/wookstar-claude-code-plugins",
       "sourceType": "github",
