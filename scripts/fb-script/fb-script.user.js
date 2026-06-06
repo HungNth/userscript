@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Copy Real Link (Facebook)
-// @version      2.0.1
+// @name         Facebook Script for useful helper features
+// @version      2.0.2
 // @namespace    https://github.com/HungNth/userscripts
 // @license      MIT
-// @description  Extract and copy clean URLs from Facebook redirect links, stripping tracking parameters like fbclid.
+// @description  A Facebook toolkit for streamlining browsing, cleaning links, and adding useful helper features.
 // @author       HungNth
 // @match        *://*.facebook.com/*
 // @icon         https://www.google.com/s2/favicons?domain=facebook.com
@@ -137,5 +137,38 @@
 
             setTimeout(() => button.remove(), 5000);
         }
+    });
+
+    // Remove Facebook Ads
+     const selector = `
+        [id^="mount_0_0_"] > div > div:first-child > div.x9f619.x1n2onr6.x1ja2u2z
+        > div.x9f619.x1n2onr6.x1ja2u2z:nth-child(4)
+        > div.x78zum5.xdt5ytf.x1n2onr6.x1ja2u2z
+        > div.x78zum5.xdt5ytf.x1n2onr6.xat3117.xxzkxad
+        > div.x78zum5.xdt5ytf.x1t2pt76.x1n2onr6.x1ja2u2z.x10cihs4:first-child
+        > div.x9f619.x1ja2u2z.x78zum5.x2lah0s.x1n2onr6.xl56j7k.x1qjc9v5.xozqiw3.x1q0g3np.x1t2pt76.x17upfok:first-child
+        > div.x9f619.x1ja2u2z.x78zum5.x1n2onr6.x1r8uery.x1iyjqo2.xs83m0k.xeuugli.x1qughib.x1cy8zhl.xozqiw3.x1q0g3np.xylbxtu.x1t2pt76.xornbnt
+        > div.x9f619.x1ja2u2z.xnp8db0.x112wk31.xnjgh8c.xxc7z9f.x1t2pt76.x1u2d2a2.x6ikm8r.x10wlt62.x7wzq59.xxzkxad.x1daaz14:last-child
+        > div.x9f619.x1n2onr6.x1ja2u2z.x78zum5.xdt5ytf.xedcshv.x1t2pt76
+        > div.xb57i2i.x1q594ok.x5lxg6s.x78zum5.xdt5ytf.x6ikm8r.x1ja2u2z.x1pq812k.x1rohswg.xfk6m8.x1yqm8si.xjx87ck.x1l7klhg.x1iyjqo2.xs83m0k.x2lwn1j.xx8ngbg.xwo3gff.x1oyok0e.x1odjw0f.x1n2onr6.xq1qtft
+        > div.x78zum5.xdt5ytf.x1iyjqo2.x1n2onr6:first-child
+        > div.x1y1aw1k
+    `.replace(/\s+/g, ' ').trim();
+
+    function removeElement() {
+        document.querySelectorAll(selector).forEach((el) => {
+            el.remove();
+        });
+    }
+
+    removeElement();
+
+    const observer = new MutationObserver(() => {
+        removeElement();
+    });
+
+    observer.observe(document.documentElement, {
+        childList: true,
+        subtree: true,
     });
 })();

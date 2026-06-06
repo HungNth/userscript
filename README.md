@@ -19,6 +19,6 @@ Below is a list of available user scripts in this repository. Click the "Install
 
 3.  [![Install WordPress Auto Config](https://img.shields.io/badge/install-WordPress_Auto_Config-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/wordpress-configure/wordpress-config-min.user.js)
 
-4.  [![Copy Facebook Real Link](https://img.shields.io/badge/install-Copy_Facebook_Real_Link-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/real-link/real-link-min.user.js)
+4.  [![Facebook Script](https://img.shields.io/badge/install-Facebook_Script-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/fb-script/fb-script-min.user.js)
 
 5.  [![Install Remove Paywall Opener](https://img.shields.io/badge/install-Remove_Paywall_Opener-blue?style=flat-square)](https://raw.githubusercontent.com/HungNth/userscript/main/scripts/remove-paywall/remove-paywall-min.user.js)
